@@ -1,23 +1,44 @@
 <html xmlns:th="http://www.thymeleaf.org">
-  <head>
-    <title>title</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
-    <link href="/css/test.css" rel="stylesheet" type="text/css" media="all" />
+<head>
+    <title>neo prototype</title>
+    <link rel="stylesheet" href="/css/base.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  </head>
-  <body>
-  <header>
-    <div class="main-title">
+</head>
+<body>
+    <header>
+        <div class="main-title">
+            <span class="menu-item"><img src="/img/menu-btn.png" alt="menu"></span>
+            <h1 class="title">neo</h1>
 
+        </div>
+        <ul>
+            <a href="#" class="menu-contents">
+                <li>
+                    맛집
+                </li>
+            </a>
+            <a href="#" class="menu-contents">
+                <li>
+                    관광지
+                </li>
+            </a>
+            <a href="#" class="menu-contents">
+                <li>
+                    숙박
+                </li>
+            </a>
+        </ul>
+    </header>
+
+    <div class="container">
+        <ul>
+            <a href="#" class="content-list"><li>맛집</li></a>
+            <a href="#" class="content-list"><li >관광지</li></a>
+            <a href="#" class="content-list"><li>숙박</li></a>
+        </ul>
     </div>
-    <ul class="main-content-list">
-
-    </ul>
-  </header>
-
-  <div class="content">
-
-  </div>
-
-  </body>
+    
+    <script type="text/javascript" src="/js/base.js"></script>
+</body>
 </html>

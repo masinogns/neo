@@ -1,0 +1,19 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="localNeo">
+    <output-path>$PROJECT_DIR$/out/artifacts/localNeo</output-path>
+    <root id="archive" name="localNeo.war">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="localNeo" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="lib" />
+          <element id="library" level="project" name="org.thymeleaf:thymeleaf-spring4:Release" />
+          <element id="library" level="project" name="org.thymeleaf:thymeleaf:Release" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="localNeo/web/Web" />
+      <element id="javaee-facet-resources" facet="localNeo/web/Web" />
+    </root>
+  </artifact>
+</component>

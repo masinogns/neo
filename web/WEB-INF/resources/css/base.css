@@ -1,0 +1,81 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+a{
+    color: inherit; /* blue colors for links too */
+    text-decoration: inherit; /* no underline */
+}
+
+a:link{
+    color: black;
+}
+a:hover{
+    color: black;
+}
+a:active{
+    color: black;
+}
+
+header{
+    height: 200px;
+}
+
+header .main-title{
+    height: 150px;
+    background-color: ghostwhite;
+}
+
+header .main-title .title{
+    text-align: center;
+    size: 10rem;
+}
+
+header .main-title .menu-item{
+    position: absolute;
+    margin-left: 10px;
+    margin-top: 10px;
+    width: 30px;
+    height: 30px;
+}
+
+header .main-title .menu-item img{
+    max-height: 30px;
+    max-width: 30px;
+    width: auto;
+    height: auto;
+}
+
+header ul{
+    height: 50px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+header ul .menu-contents{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    align-items: center;
+}
+
+
+.container ul{
+    display: flex;
+    flex-direction: column;
+}
+
+.container ul .content-list{
+    list-style: none;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
