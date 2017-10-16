@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+html{
+    font-size: 10px;
+}
+
+
 a{
     color: inherit; /* blue colors for links too */
     text-decoration: inherit; /* no underline */
@@ -20,23 +25,22 @@ a:active{
 }
 
 header{
-    height: 200px;
+    height: 15rem;
 }
 
 header .main-title{
-    height: 150px;
+    height: 10rem;
     background-color: ghostwhite;
 }
 
 header .main-title .title{
     text-align: center;
-    size: 10rem;
+    font-size: 5rem;
 }
 
 header .main-title .menu-item{
     position: absolute;
-    margin-left: 10px;
-    margin-top: 10px;
+    margin-left: 20px;
     width: 30px;
     height: 30px;
 }
@@ -49,7 +53,7 @@ header .main-title .menu-item img{
 }
 
 header ul{
-    height: 50px;
+    height: 5rem;
     display: flex;
     flex-wrap: wrap;
 }
@@ -60,6 +64,7 @@ header ul .menu-contents{
     justify-content: center;
     flex: 1;
     align-items: center;
+    border: 1px solid #e1e1e1;
 }
 
 
