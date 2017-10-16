@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="ROOT.war">
+    <output-path>$PROJECT_DIR$/out/artifacts/ROOT_war</output-path>
+    <root id="archive" name="ROOT.war.war">
+      <element id="artifact" artifact-name="M1:war exploded" />
+      <element id="file-copy" path="$PROJECT_DIR$/M1.iml" />
+      <element id="file-copy" path="$PROJECT_DIR$/pom.xml" />
+    </root>
+  </artifact>
+</component>
