@@ -8,6 +8,9 @@ html{
     font-size: 10px;
 }
 
+body{
+  font-size: 1.5rem;
+}
 
 a{
     color: inherit; /* blue colors for links too */
@@ -52,7 +55,7 @@ header .main-title .menu-item img{
     height: auto;
 }
 
-header ul{
+header .header-option-list{
     height: 5rem;
     display: flex;
     flex-wrap: wrap;
@@ -67,6 +70,9 @@ header ul .menu-contents{
     border: 1px solid #e1e1e1;
 }
 
+.container{
+  height: calc(100vh - 15rem) ;
+}
 
 .container ul{
     display: flex;
@@ -81,6 +87,37 @@ header ul .menu-contents{
     align-items: center;
 }
 
+.menu-modal{
+  position: fixed;
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 3;
+  transition: 0.2s all;
+}
 
+.menu-modal-list{
+    width: 65%;
+    height: calc(100vh - 10rem) ;
+    background-color: white;
+    border-right: 1px solid black;
+    list-style: none;
+    border-top: 1px solid black;
+    z-index: 4;
+}
 
+.menu-modal-list li{
+  width: 100%;
+  height: 7rem;
+}
 
+.menu-modal-list li a{
+  width: 100%;
+  height: 7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  border-bottom: 1px solid black;
+}

@@ -1,0 +1,97 @@
+.map-container{
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+div.container .nav{
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+  width: 40%;
+  height: 5rem;
+  list-style: none;
+  margin: 2rem;
+}
+
+div.container .nav li{
+  width: 50%;
+}
+
+div.container .nav li a{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.active{
+  background-color: rgba(0,0,0,0.1);
+}
+
+#slidecontainer {
+    width: 50%;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 25px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    /*slider marker size*/
+    width: 30px;
+    height: 30px;
+    background: black;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  /*위에 webkit-slider-thumb 와 같은 사이즈와 백그라운드 컬러로해야
+  다른 브라우저도 같은 슬라이더를 볼 수 있겠지?*/
+    width: 25px;
+    height: 25px;
+    background: #4CAF50;
+    cursor: pointer;
+}
+
+div.container .content{
+  width: 100%;
+  height: 70%;
+  margin-top: auto;
+}
+
+#slidecontainer p{
+  display: flex;
+  justify-content: center;
+}
+
+#map {
+ height: 100%;
+ width: 100%;
+}
+
+#list{
+  height: 0px;
+  width: 100%;
+  background-color: blue;
+}
+
+div#list div.item{
+  height: 10rem;
+  width: 100%;
+  background-color: black;
+}
