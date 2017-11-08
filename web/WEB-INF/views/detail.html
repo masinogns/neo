@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
   <head>
 
     <title>neo prototype</title>
@@ -51,20 +52,31 @@
 
       <div class="content">
         <div id="list">
-          <div class="item">
-
-          </div>
+            <div class="list-box">
+                <ul class="item" th:each="house : ${houses}">
+                    <li class="img-box" th:style=" 'background-image : url(' + ${house.getPhotoUrl() + ')'}"></li>
+                    <li th:text="${house.getName()}">집이름</li>
+                    <li th:text="${house.getPhoneNum()}">번호</li>
+                    <li th:text="${house.getAddress()}">주소</li>
+                    <li th:text="${house.getPoint()}">별점</li>
+                </ul>
+            </div>
         </div>
         <div id="map"></div>
       </div>
     </div>
 
+    <script th:inline="javascript">
+        var dataSet = [[${houses}]];
+    </script>
+
+
     <script type="text/javascript" src="/js/base.js"></script>
     <script type="text/javascript" src = "/js/detail.js"></script>
 
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5zVs-EPL1lP4LGSwSBEON5nn7LYIyD_w&callback=initMap">
-    </script>
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5zVs-EPL1lP4LGSwSBEON5nn7LYIyD_w"></script>
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
 
     <script type="text/javascript" src="/js/map.js"></script>
   </body>

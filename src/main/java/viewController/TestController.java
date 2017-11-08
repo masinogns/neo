@@ -25,14 +25,13 @@ public class TestController {
     @RequestMapping(value = "/")
     public String index(Model model){
 
-        List<House> houseList = houseService.findHouses();
-        model.addAttribute("tttt",houseList);
-
         return "index";
     }
 
     @RequestMapping(value = "detail")
     public String detail(Model model){
+        List<House> listHouse = houseService.findHouses();
+        model.addAttribute("houses",listHouse);
         return "detail";
     }
 }

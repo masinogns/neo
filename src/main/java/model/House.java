@@ -28,6 +28,30 @@ public class House {
     @Column(name = "photo_url")
     private String photoUrl;
 
+    @Column
+    private String lat;
+
+    @Column
+    private String lng;
+
+
+    public String getLat() {
+        return lat;
+    }
+
+    public void setLat(String lat) {
+        this.lat = lat;
+    }
+
+    public String getLng() {
+        return lng;
+    }
+
+    public void setLng(String lng) {
+        this.lng = lng;
+    }
+
+
     public Integer getId() {
         return id;
     }
