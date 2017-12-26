@@ -27,5 +27,25 @@ public class HouseService {
         return houseRepository.findAll();
     }
 
+    public List<House> findBySize(int start){
+        int beginPage = (start-1) * 10;
+        int maxContentList = 10;
+        return houseRepository.findBySize(beginPage, maxContentList);
+    }
+
+    public int getSize(){
+        int countResult = findHouses().size();
+        int lastPageNumber = (int) ((countResult / 10) + 1);
+
+        return lastPageNumber;
+    }
+
+    public List<House> findByAdress(String searchKeyword){
+        return houseRepository.findByAddress(searchKeyword);
+    }
+
+    public List<House> findByName(String searchKeyword){
+        return houseRepository.findByName(searchKeyword);
+    }
 
 }

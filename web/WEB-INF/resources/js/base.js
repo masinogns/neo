@@ -1,33 +1,51 @@
-var mainTitle = document.querySelector(".title");
-var menuIcon = document.querySelector(".menu-item");
-var mainTitleBox = document.querySelector(".main-title");
-
-var initConentList = document.querySelectorAll(".content-list");
-var settingHeight = document.querySelector("body").offsetHeight - document.querySelector("header").offsetHeight;
-
-//--------밑에 메뉴 3등분으로 나누는 코드
-
-mainTitle.style.paddingTop = (mainTitleBox.offsetHeight/2 - mainTitle.offsetHeight/2) + "px";
-menuIcon.style.marginTop = (mainTitleBox.offsetHeight/2 - menuIcon.offsetHeight/2) + "px";
-
-
- for(var i = 0; i < initConentList.length; i++){
-     initConentList[i].style.height = (settingHeight/3) + "px";
- }
 
 //------밑에 코드 메뉴 토글 동작코드
 
- var menuModalList = document.querySelector(".menu-modal-list");
- var menuModal = document.querySelector(".menu-modal");
- var menuBtn = document.querySelector(".menu-item");
+var menuModalList = document.querySelector(".menu-modal-list");
+var menuModal = document.querySelector(".menu-modal");
+var menuBtn = document.querySelector(".menu-item");
 
 
 
- menuBtn.addEventListener('click',function(e){
-   menuModal.style.height = "calc(100vh - 10rem)"
- },false);
+menuBtn.addEventListener('click',function(e){
+    menuModal.style.height = "calc(100vh - 10rem)"
+},false);
 
- menuModal.addEventListener('click',function(e){
-   if(e.target.className == "menu-modal")
-     menuModal.style.height = "0px"
- },true)
+menuModal.addEventListener('click',function(e){
+    if(e.target.className == "menu-modal")
+        menuModal.style.height = "0px"
+},true)
+
+
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({pageLanguage: 'ko', includedLanguages: 'ko,zh-CN', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+
+
+var btnModal = document.getElementById('btn-modal');
+var modal = document.getElementById('modal');
+var btnClose = document.getElementById('close');
+
+btnModal.addEventListener("click", function(){
+    console.log("modal button is clicked");
+    modal.style.display = "block";
+});
+
+btnClose.addEventListener("click", function(){
+    console.log("close button is clicked");
+    modal.style.display = "none";
+});
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+var home = document.getElementById('home');
+// var close = document.getElementsByTagName('iframe')[0].contentWindow.document.getElementsByClassName("goog-close-link").
+
+home.addEventListener("click", function(){
+    console.log("close button is clicked");
+    // close.
+});

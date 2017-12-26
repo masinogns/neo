@@ -1,115 +1,172 @@
 .map-container{
-  display: flex;
-  flex-flow: column;
-  align-items: center;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
 }
 
-div.container .nav{
-  display: flex;
-  flex-flow: row;
-  justify-content: space-around;
-  width: 40%;
-  height: 5rem;
-  list-style: none;
-  margin: 2rem;
+div.container > .nav{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    width: 30vh;
+    height: 8vh;
+    list-style: none;
+    margin: 1.5rem;
+    border: 1px solid #e9ecef;
 }
 
-div.container .nav li{
-  width: 50%;
+div.container > .nav > li{
+    width: 50%;
 }
 
-div.container .nav li a{
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
+div.container > .nav > li.activeB {
+    background-color: rgb(71, 187, 212);
+    color: white;
 }
 
-.active{
+div.container > .nav > li.activeB > a {
+    color: white;
+}
+
+div.container > .nav > li > a{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: rgb(71, 187, 212);
+}
+
+/* .active{
   background-color: rgba(0,0,0,0.1);
-}
+} */
 
 #slidecontainer {
-    width: 50%;
+    width: 50vh;
 }
 
 .slider {
     -webkit-appearance: none;
     width: 100%;
-    height: 25px;
-    background: #d3d3d3;
+    height: 3vh;
+    border-radius: 3vh;
+    background: white;
     outline: none;
     opacity: 0.7;
     -webkit-transition: .2s;
     transition: opacity .2s;
-}
-
-.slider:hover {
-    opacity: 1;
+    border: 3px solid rgb(71, 187, 212);
 }
 
 .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    /*slider marker size*/
-    width: 30px;
-    height: 30px;
-    background: black;
+    width: 5vh;
+    height: 5vh;
+    border-radius: 50%;
+    background: rgb(71, 187, 212);
+    border: 3px solid white;
     cursor: pointer;
 }
 
 .slider::-moz-range-thumb {
-  /*위에 webkit-slider-thumb 와 같은 사이즈와 백그라운드 컬러로해야
-  다른 브라우저도 같은 슬라이더를 볼 수 있겠지?*/
-    width: 25px;
-    height: 25px;
-    background: #4CAF50;
+    width: 5vh;
+    height: 5vh;
+    border-radius: 30%;
+    background: rgb(71, 187, 212);
+    border: 3px solid white;
     cursor: pointer;
 }
-
-div.container .content{
-  width: 100%;
-  height: 70%;
-  margin-top: auto;
+div.container > .content{
+    width: 100%;
+    height: 64vh;
+    margin-top: auto;
 }
 
 #slidecontainer p{
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 
 #map {
- height: 100%;
- width: 100%;
+    height: 100%;
+    width: 100%;
 }
 
 #list{
-  height: 0px;
-  width: 100%;
+    height: 0px;
+    width: 100%;
     overflow: hidden;
 }
 
-#list .list-box{
-    overflow: scroll;
-    height: 100vh;
-}
-
-#list .list-box ul.item{
-  height: 10rem;
-  width: 100%;
+.btn-container {
+    width: 100%;
+    height: 6vh;
     display: flex;
-    justify-content: space-around;
-    flex-flow: row;
-    list-style: none;
+    justify-content: space-between;
+    border-bottom: 2px solid #e9ecef;
 }
 
-#list .list-box ul.item .img-box{
-    background-size: 100% 100%;
-    width: 50px;
-    height: 50px;
+.btn-container > button {
+    border: none;
+    background-color: white;
 }
 
+.btn-container > .btn-left {
+    padding-left: 2.4vh;
+}
 
+.btn-container > .btn-right {
+    padding-right: 2.4vh;
+}
 
+.btn-container > button > img {
+    height: 5vh;
+    background-color: white;
+}
 
+.item {
+    width: 100%;
+    height: 46vh;
+    border-bottom: 2px solid #e9ecef;
+}
+
+.item > a > dl {
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 3%;
+}
+
+.item > a > dl > dt {
+    width: 100%;
+    height: 24vh;
+    background-color: blue;
+}
+
+.item > a > dl > dt > img{
+    width: 100%;
+    max-height: 24vh;
+    height: 100%;
+}
+
+.item > a > dl > dd {
+    display: flex;
+    justify-content: flex-start;
+    font-size: 2.5vh;
+    padding-left: 2vh;
+}
+.item > a > dl > dd > span {
+    margin: 3px;
+}
+.item > a > dl > dd.name {
+    padding-top: 1vh;
+    margin-bottom: 3vh;
+    font-size: 4vh;
+}
+
+.item > a > dl > dd > img {
+    width: 4vh;
+    height: 4vh;
+
+}

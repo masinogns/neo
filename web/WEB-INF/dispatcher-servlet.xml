@@ -5,18 +5,34 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <mvc:annotation-driven></mvc:annotation-driven>
+
+
+    <mvc:annotation-driven>
+        <mvc:argument-resolvers>
+            <bean class="org.springframework.mobile.device.DeviceWebArgumentResolver" />
+        </mvc:argument-resolvers>
+    </mvc:annotation-driven>
+
+
     <context:component-scan base-package="viewController"></context:component-scan>
     <mvc:resources mapping="/resources/**" location="WEB-INF/resources/" />
     <mvc:resources mapping="/css/**" location="WEB-INF/resources/css/" />
     <mvc:resources mapping="/js/**" location="WEB-INF/resources/js/" />
     <mvc:resources mapping="/img/**" location="WEB-INF/resources/img/" />
+    <mvc:resources mapping="/fragments/**" location="WEB-INF/views/fragments/" />
 
 
     <!--<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">-->
         <!--<property name="prefix" value="/WEB-INF/views/"></property>-->
         <!--<property name="suffix" value=".jsp"></property>-->
     <!--</bean>-->
+
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/viewController/**" />
+            <bean class="org.springframework.mobile.device.DeviceResolverHandlerInterceptor" />
+        </mvc:interceptor>
+    </mvc:interceptors>
 
     <bean id="templateResolver"
           class="org.thymeleaf.templateresolver.ServletContextTemplateResolver">
@@ -36,4 +52,6 @@
         <property name="characterEncoding" value="UTF-8" />
         <property name="templateEngine" ref="templateEngine" />
     </bean>
+
+
 </beans>

@@ -3,9 +3,11 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:tx="http://www.springframework.org/schema/tx"
        xmlns:context="http://www.springframework.org/schema/context"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
-        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"
+
+       xsi:schemaLocation=
+               "http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+                http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"
 >
 
     <tx:annotation-driven />
@@ -17,6 +19,11 @@
         <property name="url" value="jdbc:mysql://captanp696.cafe24.com/captanp696" />
         <property name="username" value="captanp696" />
         <property name="password" value="parkli**99" />
+        <property name="testWhileIdle" value="true" />
+        <property name="testOnBorrow" value="true" />
+        <property name="validationInterval" value="10000" />
+        <property name="logValidationErrors" value="true" />
+        <property name="validationQuery" value="SELECT 1" />
     </bean>
 
     <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
@@ -48,13 +55,24 @@
                 <prop key="hibernate.id.new_generator_mappings">
                     ture
                 </prop>
+                <prop key="hibernate.c3p0.min_size">
+                    5
+                </prop>
+                <prop key="hibernate.c3p0.max_size">
+                    20
+                </prop>
+                <prop key="hibernate.c3p0.timeout">
+                    300
+                </prop>
+                <prop key="hibernate.c3p0.max_statements">
+                    50
+                </prop>
+                <prop key="hibernate.c3p0.idle_test_period.timeout">
+                    3000
+                </prop>
             </props>
         </property>
-
-
     </bean>
-
-
 
 
 </beans>

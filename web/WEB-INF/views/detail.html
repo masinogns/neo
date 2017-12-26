@@ -7,75 +7,80 @@
     <link rel="stylesheet" href="/css/base.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/detail.css">
+
   </head>
 
   <body>
-    <header>
-        <div class="main-title">
-            <span class="menu-item"><img src="/img/menu-btn.png" alt="menu"></span>
-            <h1 class="title">neo</h1>
-        </div>
-        <div class="menu-modal">
-          <ul class="menu-modal-list">
-            <li><a href="#">회원가입 해야함</a></li>
-            <li><a href="#">회원가입</a></li>
-          </ul>
-        </div>
-        <ul class="header-option-list">
-            <a href="/detail.html" class="menu-contents">
-                <li>
-                    맛집
-                </li>
-            </a>
-            <a href="#" class="menu-contents">
-                <li>
-                    관광지
-                </li>
-            </a>
-            <a href="#" class="menu-contents">
-                <li>
-                    숙박
-                </li>
-            </a>
-        </ul>
-    </header>
-    <div class="container map-container">
-      <ul class="nav">
-        <li class="active"><a class="map" href="#">Map</a></li>
-        <li class=""><a class="list" href="#">List</a></li>
-      </ul>
+    <header th:replace="fragments/header :: headerFragment"></header>
 
-      <div id="slidecontainer">
-        <input type="range" min="1" max="5" value="2" class="slider" id="myRange">
-        <p>Value: <span id="demo"></span></p>
-      </div>
+    <div class="container map-container">
+        <ul class="nav">
+            <li class="activeB"><a class="map" href="#">Map</a></li>
+            <li class=""><a class="list" href="#">List</a></li>
+        </ul>
+
+        <div id="slidecontainer">
+            <input type="range" min="1" max="7" value="3" class="slider" id="myRange">
+        </div>
+
+        <div class="btn-container">
+            <button class="btn-left"><img src="/img/detail/minus.png" alt="minus"></button>
+            <button class="btn-right"><img src="/img/detail/plus.png" alt="plus"></button>
+        </div>
 
       <div class="content">
         <div id="list">
-            <div class="list-box">
-                <ul class="item" th:each="house : ${houses}">
-                    <li class="img-box" th:style=" 'background-image : url(' + ${house.getPhotoUrl() + ')'}"></li>
-                    <li th:text="${house.getName()}">집이름</li>
-                    <li th:text="${house.getPhoneNum()}">번호</li>
-                    <li th:text="${house.getAddress()}">주소</li>
-                    <li th:text="${house.getPoint()}">별점</li>
-                </ul>
+            <div class="item">
+                <a href="#" th:each="data : ${datas}">
+                    <dl>
+                        <dt>
+                            <img class="img-box" th:src="${data.getPhotoUrl()}">
+                        </dt>
+                        <dd class="name">
+                            <span th:text="${data.getName()}"></span>
+                        </dd>
+                        <dd>
+                            <img src="img/detail/location.png" alt="location">
+                            <span th:text="${data.getAddress()}"></span>
+                        </dd>
+                        <dd>
+                            <img src="img/detail/call.png" alt="call">
+                            <span th:text="${data.getPhoneNum()}"></span>
+                        </dd>
+                        <dd>
+                            <img src="img/detail/star.png" alt="star">
+                            <span th:text="${data.getPoint()}">3.0점</span>
+                        </dd>
+                    </dl>
+                </a>
             </div>
         </div>
         <div id="map"></div>
       </div>
     </div>
 
+    <footer th:replace="fragments/footer :: footerFragment"></footer>
+
+    <div th:replace="fragments/modal :: modalFragment"></div>
+
+
     <script th:inline="javascript">
-        var dataSet = [[${houses}]];
+        var dataSet = [[${datas}]];
+        console.log(dataSet)
     </script>
 
 
     <script type="text/javascript" src="/js/base.js"></script>
     <script type="text/javascript" src = "/js/detail.js"></script>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'ko', includedLanguages: 'ko,zh-CN', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5zVs-EPL1lP4LGSwSBEON5nn7LYIyD_w"></script>
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKGKMXCs4NvynN-ZCi2TWoQysg7tCMy7Y"></script>
     <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
 
     <script type="text/javascript" src="/js/map.js"></script>

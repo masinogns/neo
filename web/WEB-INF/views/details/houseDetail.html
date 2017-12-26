@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <title>neo prototype</title>
+    <link rel="stylesheet" href="/css/base.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/detail.css">
+
+</head>
+
+<body>
+<header th:replace="fragments/header :: headerFragment"></header>
+
+<div class="container map-container">
+    <ul class="nav">
+        <li class="activeB"><a class="map" href="#">Map</a></li>
+        <li class=""><a class="list" href="#">List</a></li>
+    </ul>
+
+    <div id="slidecontainer">
+        <input type="range" min="1" max="7" value="3" class="slider" id="myRange">
+    </div>
+
+    <div class="btn-container">
+        <button class="btn-left"><img src="/img/detail/minus.png" alt="minus"></button>
+        <button class="btn-right"><img src="/img/detail/plus.png" alt="plus"></button>
+    </div>
+
+    <div class="content">
+        <div id="list">
+            <div class="item">
+                <a href="#" th:each="data : ${datas}">
+                    <dl>
+                        <dt>
+                            <img class="img-box" th:src="${data.getPhotoUrl()}">
+                        </dt>
+                        <dd class="name">
+                            <span th:text="${data.getName()}"></span>
+                        </dd>
+                        <dd>
+                            <img src="/img/detail/location.png" alt="location">
+                            <span th:text="${data.getAddress()}"></span>
+                        </dd>
+                        <dd>
+                            <img src="/img/detail/call.png" alt="call">
+                            <span th:text="${data.getPhoneNum()}"></span>
+                        </dd>
+                        <dd>
+                            <img src="/img/detail/star.png" alt="star">
+                            <span th:text="${data.getPoint()}">3.0점</span>
+                        </dd>
+                    </dl>
+                </a>
+            </div>
+        </div>
+        <div id="map"></div>
+    </div>
+</div>
+
+<footer th:replace="fragments/footer :: footerFragment"></footer>
+
+<div th:replace="fragments/modal :: modalFragment"></div>
+
+
+<script th:inline="javascript">
+    var dataSet = [[${datas}]];
+    console.log(dataSet)
+    var active = document.querySelector('.menu-contents-house');
+    active.classList.add("active");
+</script>
+
+
+<script type="text/javascript" src="/js/base.js"></script>
+<script type="text/javascript" src = "/js/detail.js"></script>
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'ko', includedLanguages: 'ko,zh-CN', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+    }
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKGKMXCs4NvynN-ZCi2TWoQysg7tCMy7Y"></script>
+<script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+
+<script type="text/javascript" src="/js/map.js"></script>
+</body>
+</html>

@@ -5,11 +5,16 @@
 }
 
 html{
-    font-size: 10px;
+    font-size: 3px;
 }
 
 body{
-  font-size: 1.5rem;
+    font-size: 1.5rem;
+}
+
+ul, ol, li {
+    display: block;
+    list-style: none;
 }
 
 a{
@@ -17,84 +22,146 @@ a{
     text-decoration: inherit; /* no underline */
 }
 
-a:link{
-    color: black;
-}
-a:hover{
-    color: black;
-}
+a:link,
+a:hover,
 a:active{
-    color: black;
+    text-decoration: none;
 }
 
 header{
-    height: 15rem;
+    height: 17vh;
 }
 
 header .main-title{
-    height: 10rem;
-    background-color: ghostwhite;
+    /* height: 10rem; */
+    height: 10vh;
+    background-color: rgb(37, 178, 208);
 }
 
 header .main-title .title{
+    height: 10vh;
+    padding: 3vh;
     text-align: center;
-    font-size: 5rem;
+    font-family: 'Lato', sans-serif;
+    font-size: 8rem;
+    color: white;
 }
 
 header .main-title .menu-item{
     position: absolute;
     margin-left: 20px;
-    width: 30px;
-    height: 30px;
+    width: 5vh;
+    height: 5vh;
 }
 
 header .main-title .menu-item img{
-    max-height: 30px;
-    max-width: 30px;
+    max-width: 5vh;
+    max-height: 5vh;
+    margin-top: 2.5vh;
+    margin-left: 3vh;
     width: auto;
     height: auto;
 }
 
 header .header-option-list{
-    height: 5rem;
+    /* height: 5rem; */
+    height: 7vh;
+    font-size: 5rem;
     display: flex;
     flex-wrap: wrap;
 }
 
-header ul .menu-contents{
+.header-option-list {
+    color: rgb(71, 187, 212);
+}
+
+header > ul > .menu-contents{
     list-style: none;
     display: flex;
     justify-content: center;
     flex: 1;
     align-items: center;
-    border: 1px solid #e1e1e1;
+    /* border: 1px solid white; */
 }
 
-.container{
-  height: calc(100vh - 15rem) ;
+header > ul > .menu-contents:hover{
+    border-bottom: 0.6rem solid rgb(38, 161, 188);
+    background-color: rgb(71, 187, 212);
+    color: white;
 }
 
-.container ul{
+.container > ul {
+    font-size: 10rem;
     display: flex;
     flex-direction: column;
+    text-align: center;
 }
 
-.container ul .content-list{
+.container > ul > .content-list{
     list-style: none;
     display: flex;
     width: 100%;
+    height: 24vh;
     justify-content: center;
     align-items: center;
+
+    color: white;
+    border-bottom: 1px solid white;
+}
+
+.content-list > a {
+    width: 100%;
+    height: 100%;
+}
+
+.content-list > a > div {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(58,58,58,0.4) ;
+}
+
+.content-list > a > div > dl {
+    padding-top: 6vh;
+}
+
+.content-list > a > div > dl > dt {
+    font-size: 10rem;
+}
+
+.content-list > a > div > dl > dd {
+    width: 16vh;
+    font-size: 5rem;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    margin: 0 auto;
+}
+
+#sightseeing {
+    background: url("/img/index/sightsee.png") no-repeat;
+    background-size: 100% 100%;
+    background-position: left top;
+}
+
+#restaurant {
+    background: url("/img/index/food.jpg") no-repeat;
+    background-size: 100% 100%;
+    background-position: left top;
+}
+
+#stay {
+    background: url("/img/index/stay.jpg") no-repeat;
+    background-size: 100% 100%;
+    background-position: left top;
 }
 
 .menu-modal{
-  position: fixed;
-  overflow: hidden;
-  width: 100%;
-  height: 0;
-  background-color: rgba(0, 0, 0, 0.3);
-  z-index: 3;
-  transition: 0.2s all;
+    position: fixed;
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 3;
+    transition: 0.2s all;
 }
 
 .menu-modal-list{
@@ -108,16 +175,132 @@ header ul .menu-contents{
 }
 
 .menu-modal-list li{
-  width: 100%;
-  height: 7rem;
+    width: 100%;
+    height: 7rem;
 }
 
 .menu-modal-list li a{
-  width: 100%;
-  height: 7rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: bold;
-  border-bottom: 1px solid black;
+    width: 100%;
+    height: 7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    border-bottom: 1px solid black;
 }
+
+footer {
+    position: fixed;
+    z-index: 99999;
+    width: 100%;
+    height: 11vh;
+    bottom: 0px;
+    background-color: rgb(58,58,58);
+}
+
+footer > ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer > ul > li {
+    margin: 1vh;
+    padding: 0.3vh;
+}
+
+footer > ul > li > a {
+    width: 8vh;
+    height: 8vh;
+}
+
+footer > ul > li > a > img {
+    max-width: 8vh;
+    max-height: 8vh;
+}
+
+footer > ul > li > a > button {
+    background-color: rgba(255, 0, 0, 0);
+    border: 0px;
+}
+/*setting btn, same code with upper code*/
+footer > ul > li > a > button > img {
+    max-width: 8vh;
+    max-height: 8vh;
+
+}
+
+.active {
+    border-bottom: 0.6rem solid rgb(38, 161, 188);
+    background-color: rgb(71, 187, 212);
+    color: white;
+}
+
+.google {
+    display: none;
+}
+
+#google_translate_element {
+    margin-bottom: 3vh;
+}
+
+.goog-te-menu-value {
+    font-size: 5vh;
+}
+
+img.goog-te-gadget-icon {
+    height: 0px;
+    width: 0px;
+}
+
+#modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+#modal > dl {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+#modal > dl > dt {
+    /*font-size: ;*/
+}
+
+#modal > dl > dd {
+    margin-bottom: 2vh;
+}
+
+#modal > dl > dl {
+    margin-bottom: 2vh;
+    font-size: 2vh;
+}
+
+#modal > dl > dd.btn-close {
+    position: relative;
+    width: 100%;
+    height: 12vh;
+}
+
+#modal > dl > dd > button > img {
+    max-width: 10vh;
+    max-height: 10vh;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+
+/*Kihoon`s */

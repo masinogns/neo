@@ -1,0 +1,41 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+>
+
+<header th:fragment="headerFragment">
+    <div class="main-title">
+        <span class="menu-item"><img src="/img/menu-btn2.png" alt="menu"></span>
+        <h1 class="title"><a href="/">JEJU TRAVLE</a></h1>
+    </div>
+    <div class="menu-modal">
+        <ul class="menu-modal-list">
+            <li><a href="#">회원가입 해야함</a></li>
+            <li><a href="#">회원가입</a></li>
+        </ul>
+    </div>
+    <ul class="header-option-list">
+        <a href="/detail/food" class="menu-contents menu-contents-food">
+            <li>
+                맛집
+            </li>
+        </a>
+        <a href="/detail/place" class="menu-contents menu-contents-place">
+            <li>
+                관광지
+            </li>
+        </a>
+        <a href="/detail/house" class="menu-contents menu-contents-house">
+            <li>
+                숙박
+            </li>
+        </a>
+    </ul>
+</header>
+
+
+</html>
+
+
+

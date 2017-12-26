@@ -1,49 +1,63 @@
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
-<head>
-    <title>neo prototype</title>
-    <link rel="stylesheet" href="/css/base.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+     >
+<head th:replace="fragments/config :: configFragment"></head>
+
+
 <body>
-    <header>
-        <div class="main-title">
-            <span class="menu-item"><img src="/img/menu-btn.png" alt="menu"></span>
-            <h1 class="title">neo</h1>
-        </div>
-        <div class="menu-modal">
-          <ul class="menu-modal-list">
-            <li><a href="#">회원가입 해야함</a></li>
-            <li><a href="#">회원가입</a></li>
-          </ul>
-        </div>
-        <ul class="header-option-list">
-            <a href="detail" class="menu-contents">
-                <li>
-                    맛집
-                </li>
-            </a>
-            <a href="#" class="menu-contents">
-                <li>
-                    관광지
-                </li>
-            </a>
-            <a href="#" class="menu-contents">
-                <li>
-                    숙박
-                </li>
-            </a>
-        </ul>
+<header th:replace="fragments/header :: headerFragment"></header>
 
-    </header>
+<div class="container">
+    <ul>
+        <li id="sightseeing" class="content-list">
+            <a href="/detail/place" >
+                <div>
+                    <dl>
+                        <dt>관광</dt>
+                        <dd>sightseeing</dd>
+                    </dl>
+                </div>
+            </a>
+        </li>
 
-    <div class="container">
-        <ul>
-            <a href="#" class="content-list"><li>맛집</li></a>
-            <a href="#" class="content-list"><li >관광지</li></a>
-            <a href="#" class="content-list"><li>숙박</li></a>
-        </ul>
-    </div>
-    <script type="text/javascript" src="/js/base.js"></script>
+        <li id="restaurant" class="content-list">
+            <a href="/detail/food" >
+                <div>
+                    <dl>
+                        <dt>맛집</dt>
+                        <dd>restaurant</dd>
+                    </dl>
+                </div>
+            </a>
+        </li>
+
+        <li id="stay" class="content-list">
+            <a href="/detail/house" >
+                <div>
+                    <dl>
+                        <dt>숙박</dt>
+                        <dd>stay</dd>
+                    </dl>
+                </div>
+            </a>
+        </li>
+
+
+    </ul>
+</div>
+
+<footer th:replace="fragments/footer :: footerFragment"></footer>
+
+<div th:replace="fragments/modal :: modalFragment"></div>
+
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'ko', includedLanguages: 'ko,zh-CN', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+    }
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script type="text/javascript" src="/js/base.js"></script>
 </body>
+
 </html>
